@@ -28,17 +28,22 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# settings.py
+AUTH_USER_MODEL = 'pbl.Admin'
+
+
 
 # Application definition
 
 INSTALLED_APPS = [
+    'pbl',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pbl',
+    
 ]
 
 MIDDLEWARE = [
@@ -91,7 +96,7 @@ WSGI_APPLICATION = 'practice.wsgi.application'
 DATABASES = {
     'default':{
         'ENGINE': 'djongo',
-        'NAME': 'Django',
+        'NAME': 'CCTV',
         'CLIENT': {
             'host': 'mongodb+srv://Rudra:Romil@cluster0.8090d03.mongodb.net/django?retryWrites=true&w=majority',
             'username': 'Rudra',
