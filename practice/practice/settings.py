@@ -75,10 +75,29 @@ WSGI_APPLICATION = 'practice.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'djongo',
+#         'NAME': 'Django',
+#         'CLIENT': {
+#             'host': 'mongodb+srv://Rudra:Romil@cluster0.8090d03.mongodb.net/Django?retryWrites=true&w=majority',
+#             'port': 27017,
+#             'username': 'Rudra',
+#             'password':'Romil'
+#         }
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    'default':{
+        'ENGINE': 'djongo',
+        'NAME': 'Django',
+        'CLIENT': {
+            'host': 'mongodb+srv://Rudra:Romil@cluster0.8090d03.mongodb.net/django?retryWrites=true&w=majority',
+            'username': 'Rudra',
+            'password': 'Romil'
+        }
+
     }
 }
 

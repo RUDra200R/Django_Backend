@@ -65,10 +65,10 @@ def user_logout(request):
 def register(request):
     if request.method == "POST":
         username = request.POST.get('username')
-        phoneno = request.POST.get('phoneno')
+        phone = request.POST.get('phone')
         email = request.POST.get('email')
         password = request.POST.get('password')
-        orgname = request.POST.get('orgname')
+        organname = request.POST.get(' organname')
 
         if User.objects.filter(username=username).exists():
             messages.error(request, 'Username already exists')
@@ -76,10 +76,10 @@ def register(request):
 
         user = User.objects.create_user(
             username=username,
-        #    phoneno=phoneno,
+            # phone=phone,
             email=email,
             password=password,
-        #    orgname=orgname
+            # organname = organname
         )
         # Assuming 'phoneno' and 'orgname' are not fields in the default User model
         # If you want to store these fields, create a custom User model or a related model.
