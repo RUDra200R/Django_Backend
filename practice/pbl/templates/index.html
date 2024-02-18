@@ -35,6 +35,8 @@
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
                     <a href="/logout/" class="navopt" type="submit">Logout</a>
+                    <h3 style="color: white;">Hi {{user.first_name}}!!</h3>
+
                     {% else %}
                     <a href="/Login/" class="navopt" type="submit">Login</a>
                         {% endif %}
