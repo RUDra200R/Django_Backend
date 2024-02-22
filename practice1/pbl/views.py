@@ -55,7 +55,7 @@ def user_login(request):
 
         if user is None:
             messages.error(request, 'Invalid username or password')
-            return redirect('Login.html')
+            return render(request, 'Login.html')
 
         login(request, user)
         return redirect('home')
@@ -78,19 +78,11 @@ def register(request):
         password = request.POST.get('password')
         organization_Name = request.POST.get('organization_Name')
         
-        # try:
-        #     user = User.objects.get(username=username)
-        #     messages.error(request, 'Please register or try a different username.')
-        #     return redirect("Register")
-
-        # except:
-        #     messages.success(request, 'Account created successfully')
-        #     return redirect(request, '/Login.html')
 
         try:
+            # Check if the username already exists
             user = User.objects.get(username=username)
             messages.error(request, 'Username already exists. Please choose a different one.')
-            # render the registration form with the error message
             return render(request, 'register.html')
         except User.DoesNotExist:
             try:
@@ -102,7 +94,7 @@ def register(request):
             except User.DoesNotExist:
                 try:
                     # Check if the email already exists
-                    user = User.objects.filter(email=email)
+                    user = User.objects.get(email=email)
                     messages.error(request, 'Email address already registered. Please use a different one.')
                     return render(request, 'register.html')
 
@@ -117,8 +109,8 @@ def register(request):
                             password=password,
                             organization_Name=organization_Name
                              )
-                     return redirect(request, '/Login.html')
                      messages.success(request, 'Account created successfully')
+                     return redirect('Login')
 
     return render(request, 'register.html')
 
