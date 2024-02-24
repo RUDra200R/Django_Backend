@@ -364,15 +364,15 @@
                 <li><a href="/service/" class="navopt">Service</a></li>
                 <li><a href="/contact/" class="navopt">Contact</a></li>
                 <li><a href="/about/" class="navopt">About</a></li>
-                <li><form class="" role="search">
+                <li>
+                    <form class="" role="search">
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
                     <a href="/logout/" class="navopt" type="submit">Logout</a>
                     {% else %}
                     <a href="/Login/" class="navopt" type="submit">Login</a>
-                        {% endif %}
-                
-                </form>
+                    {% endif %}
+                    </form>
                 </li>
             </ul>
         </nav>

@@ -31,27 +31,24 @@
                 <li><a href="/service/" class="navopt">Service</a></li>
                 <li><a href="/contact/" class="navopt">Contact</a></li>
                 <li><a href="/about/" class="navopt">About</a></li>
-                
-                <li><form class="" role="search">
+                <li>
+                    <form class="" role="search">
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
-                    <!-- < style="color: White;">Welcome {{user.first_name}}</p>
-                     <a href="/logout/" class="navopt" type="submit">Logout</a> -->
-                     <li>
-                        <a href="/logout/" class="navopt" type="submit">Logout</a>
-                        <h3 style="color: white;">Hi {{user.first_name}}!!</h3>
-                        
-                     </li>
+                    <li>
+                        <a href="/logout/" class="navopt" data-tooltip="Hi {{user.first_name}}!!" type="submit">Logout</a>
+                        </li>
                     {% else %}
                     <a href="/Login/" class="navopt" type="submit">Login</a>
-                        {% endif %}
+                    {% endif %}
                 
                 </form>
                 </li>
             </ul>
         </nav>
     </header>
-
+   <!-- <h3 style="color: white;">Hi {{user.first_name}}!!</h3> -->
+                    
     <!-- What We Do -->
     <div class="div1">
         <section class="milestone">
