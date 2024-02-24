@@ -34,3 +34,13 @@ animateTextAppearance();
 
 // Repeat the animation every 1 second (1000 milliseconds)
 setInterval(animateTextAppearance, 1800000);
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navItems = document.querySelector('.nav-items');
+
+    mobileMenuIcon.addEventListener('click', function () {
+        navItems.classList.toggle('show');
+    });
+});

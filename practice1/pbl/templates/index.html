@@ -20,7 +20,7 @@
      
     <header class="container">
         <nav id="nav">
-            <a href="/static/index.html"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a> 
+            <a href="/static/index.html"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a>
             <div class="mobile-menu-icon">
                 <span></span>
                 <span></span>
@@ -36,18 +36,27 @@
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
                     <li>
-                        <a href="/logout/" class="navopt" data-tooltip="Hi {{user.first_name}}!!" type="submit">Logout</a>
-                        <h3 style="color: white;">Hi {{user.first_name}}!!</h3>
+                        <a href="/logout/" class="navopt" type="submit">Logout</a>
                     </li>
                     {% else %}
                     <a href="/Login/" class="navopt" type="submit">Login</a>
                     {% endif %}
-                
-                </form>
+                    </form>
                 </li>
+
+                <li><form class="" role="search">
+                    <!--Code for admin panel-->
+                    {% if request.user.is_authenticated %}
+                    <li class="user-info">
+                        <a style="color: white;">Hi {{user.first_name}}!!</a>
+                    </li>
+                    {% else %}
+                    <li></li>
+                    {% endif %}</li>
             </ul>
         </nav>
     </header>
+    
    <!-- <h3 style="color: white;">Hi {{user.first_name}}!!</h3> -->
                     
     <!-- What We Do -->

@@ -39,7 +39,7 @@ body {
     display: flex;
     flex-direction: row;
     gap: 30%;
-    margin: auto auto auto 27%;
+    margin: auto auto auto 23%;
     padding-left: 0%;
     padding-right: 20%;
     animation: SocialAni 1s ease forwards;
@@ -71,6 +71,11 @@ body {
     width: 0;
     background-color: #f1f1f1;
     transition: width .3s;
+}
+
+.user-info{
+    position: relative;
+    left: 30px;
 }
 
 .navopt:hover::after {
