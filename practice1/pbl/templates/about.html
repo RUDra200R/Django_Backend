@@ -17,6 +17,7 @@
             margin: 0px; 
             padding: 0px;
         }
+
 /*                  Navbar                */
 
 #nav{
@@ -47,9 +48,8 @@
     display: flex;
     flex-direction: row;
     gap: 30%;
-    margin: auto auto auto 27%;
-    padding-left: 0%;
-    padding-right: 20%;
+    margin: 1% auto auto 23%;
+    padding: 0% 23.5% 0% 0%;
     animation: SocialAni 1s ease forwards;
     animation-delay: calc(.2s * var(--socialAni));
 }
@@ -57,18 +57,28 @@
 .navopt{
     border: 10px;
     border-radius: 25%;
-    padding: 7px, 15px;
+    padding: 7px, 15px 7px 15px;
     border-radius: 20px;
     color: White;
     align-items: right;
-    margin-left: 35px;
-    margin-right: 18px;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);
-    margin: 0%;
+    margin: 0% ;
     font-size: 18px;
-    padding-bottom: 0px;
     text-decoration: none;
     font-family: Georgia, serif;
+}
+
+.user-info{
+    margin-left: -50%;
+}
+
+.user-info-text{
+    color: white;
+    font-size: 20px;
+    margin: 0px;
+    padding: 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+
 }
 
 .navopt::after {
@@ -79,6 +89,11 @@
     width: 0;
     background-color: #f1f1f1;
     transition: width .3s;
+}
+
+.user-info{
+    position: relative;
+    left: 30px;
 }
 
 .navopt:hover::after {
@@ -495,7 +510,7 @@ footer {
    
    <header class="container">
     <nav id="nav">
-        <a href="/index/"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a> 
+        <a href="/static/index.html"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a>
         <div class="mobile-menu-icon">
             <span></span>
             <span></span>
@@ -506,20 +521,32 @@ footer {
             <li><a href="/service/" class="navopt">Service</a></li>
             <li><a href="/contact/" class="navopt">Contact</a></li>
             <li><a href="/about/" class="navopt">About</a></li>
+            <li>
+                <form class="" role="search">
+                <!--Code for admin panel-->
+                {% if request.user.is_authenticated %}
+                <li>
+                    <a href="/logout/" class="navopt" type="submit">Logout</a>
+                </li>
+                {% else %}
+                <a href="/Login/" class="navopt" type="submit">Login</a>
+                {% endif %}
+                </form>
+            </li>
+
             <li><form class="" role="search">
                 <!--Code for admin panel-->
                 {% if request.user.is_authenticated %}
-                <a href="/logout/" class="navopt" type="submit">Logout</a>
+                <li class="user-info">
+                    <a class="user-info-text" style="color: white; white-space: nowrap;">Hi {{user.first_name}}!!</a>
+                </li>
                 {% else %}
-                <a href="/Login/" class="navopt" type="submit">Login</a>
-                    {% endif %}
-            
-            </form>
-            </li>
+                <li></li>
+                {% endif %}</li>
         </ul>
     </nav>
 </header>
-    
+ 
     <h1 class="ourambition">Our Ambition</h1>
     <div class="text-container">
         

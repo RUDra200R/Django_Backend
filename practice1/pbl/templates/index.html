@@ -48,7 +48,7 @@
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
                     <li class="user-info">
-                        <a style="color: white;">Hi {{user.first_name}}!!</a>
+                        <a class="user-info-text" style="color: white; white-space: nowrap;">Hi {{user.first_name}}!!</a>
                     </li>
                     {% else %}
                     <li></li>

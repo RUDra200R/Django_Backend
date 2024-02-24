@@ -67,9 +67,8 @@
   display: flex;
   flex-direction: row;
   gap: 30%;
-  margin: auto auto auto 27%;
-  padding-left: 0%;
-  padding-right: 20%;
+  margin: 1% auto auto 23%;
+  padding: 0% 23.5% 0% 0%;
   animation: SocialAni 1s ease forwards;
   animation-delay: calc(.2s * var(--socialAni));
 }
@@ -77,18 +76,28 @@
 .navopt{
   border: 10px;
   border-radius: 25%;
-  padding: 7px, 15px;
+  padding: 7px, 15px 7px 15px;
   border-radius: 20px;
   color: White;
   align-items: right;
-  margin-left: 35px;
-  margin-right: 18px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 100);
-  margin: 0%;
+  margin: 0% ;
   font-size: 18px;
-  padding-bottom: 0px;
   text-decoration: none;
   font-family: Georgia, serif;
+}
+
+.user-info{
+  margin-left: -50%;
+}
+
+.user-info-text{
+  color: white;
+  font-size: 20px;
+  margin: 0px;
+  padding: 0px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+
 }
 
 .navopt::after {
@@ -99,6 +108,11 @@
   width: 0;
   background-color: #f1f1f1;
   transition: width .3s;
+}
+
+.user-info{
+  position: relative;
+  left: 30px;
 }
 
 .navopt:hover::after {

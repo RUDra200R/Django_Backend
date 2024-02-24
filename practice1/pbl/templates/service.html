@@ -17,7 +17,7 @@
 
       <header class="container">
         <nav id="nav">
-            <a href="/static/index.html"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a> 
+            <a href="/static/index.html"><img id="logo" src="/static/images/company-logo.jpg" width="50" height="50" alt="Website Logo"></a>
             <div class="mobile-menu-icon">
                 <span></span>
                 <span></span>
@@ -28,20 +28,32 @@
                 <li><a href="/service/" class="navopt">Service</a></li>
                 <li><a href="/contact/" class="navopt">Contact</a></li>
                 <li><a href="/about/" class="navopt">About</a></li>
+                <li>
+                    <form class="" role="search">
+                    <!--Code for admin panel-->
+                    {% if request.user.is_authenticated %}
+                    <li>
+                        <a href="/logout/" class="navopt" type="submit">Logout</a>
+                    </li>
+                    {% else %}
+                    <a href="/Login/" class="navopt" type="submit">Login</a>
+                    {% endif %}
+                    </form>
+                </li>
+
                 <li><form class="" role="search">
                     <!--Code for admin panel-->
                     {% if request.user.is_authenticated %}
-                    <a href="/logout/" class="navopt" type="submit">Logout</a>
+                    <li class="user-info">
+                        <a class="user-info-text" style="color: white; white-space: nowrap;">Hi {{user.first_name}}!!</a>
+                    </li>
                     {% else %}
-                    <a href="/Login/" class="navopt" type="submit">Login</a>
-                        {% endif %}
-                
-                </form>
-                </li>
+                    <li></li>
+                    {% endif %}</li>
             </ul>
         </nav>
     </header>
-      
+    
 <!-- service -->
        <div class="text">
         <p> Services are</p>
