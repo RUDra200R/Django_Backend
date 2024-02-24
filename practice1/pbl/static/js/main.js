@@ -34,15 +34,3 @@ animateTextAppearance();
 
 // Repeat the animation every 1 second (1000 milliseconds)
 setInterval(animateTextAppearance, 1800000);
-
-
-
-// Tooltip User Hover
-document.addEventListener("DOMContentLoaded", function() {
-    var navItems = document.querySelectorAll(".navopt[data-tooltip]");
-
-    navItems.forEach(function(navItem) {
-        var tooltipText = navItem.getAttribute("data-tooltip");
-        navItem.setAttribute("title", tooltipText); // Set title attribute for accessibility
-    });
-});

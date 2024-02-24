@@ -37,7 +37,8 @@
                     {% if request.user.is_authenticated %}
                     <li>
                         <a href="/logout/" class="navopt" data-tooltip="Hi {{user.first_name}}!!" type="submit">Logout</a>
-                        </li>
+                        <h3 style="color: white;">Hi {{user.first_name}}!!</h3>
+                    </li>
                     {% else %}
                     <a href="/Login/" class="navopt" type="submit">Login</a>
                     {% endif %}
