@@ -33,7 +33,7 @@ function animateTextAppearance() {
 animateTextAppearance();
 
 // Repeat the animation every 1 second (1000 milliseconds)
-setInterval(animateTextAppearance, 1800000);
+setInterval(animateTextAppearance, 100);
 
 
 document.addEventListener('DOMContentLoaded', function () {

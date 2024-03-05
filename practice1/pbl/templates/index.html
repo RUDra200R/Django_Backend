@@ -69,7 +69,7 @@
             <div>
                 <p class="centerbelowtext">This Cultivated Model Will be integrated in the<br>
                     CCTV Surveillance system for convenient Detection of <br>
-                    any anomalie from a visible Screen!!!</p>
+                    any anomaly from a visible Screen!!!</p>
             </div>
         </section>
     </div>
@@ -97,10 +97,13 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
-    <script>
 
-// Add this in your main.js file or in a script tag in your HTML
+</body>
+</html>
+
+
+<script>
+    // Add this in your main.js file or in a script tag in your HTML
 
 document.addEventListener('DOMContentLoaded', function () {
   const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
@@ -135,16 +138,19 @@ function animateTextAppearance() {
 animateTextAppearance();
 
 // Repeat the animation every 1 second (1000 milliseconds)
-setInterval(animateTextAppearance, 1800000);
+setInterval(animateTextAppearance, 25000);
 
 
+document.addEventListener('DOMContentLoaded', function () {
+    const mobileMenuIcon = document.querySelector('.mobile-menu-icon');
+    const navItems = document.querySelector('.nav-items');
 
+    mobileMenuIcon.addEventListener('click', function () {
+        navItems.classList.toggle('show');
+    });
+});
 
-    </script>
-
-</body>
-</html>
-
+</script>
 
 
 
