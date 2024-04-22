@@ -34,6 +34,8 @@ urlpatterns = [
 
     path('contact/' ,contact ,name="contact"),
 
+    path('video/' ,video ,name="video"),
+
     path('about/' ,about ,name="about"),
 
     path('Login/' ,user_login ,name="Login"),
