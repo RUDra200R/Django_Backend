@@ -87,6 +87,8 @@ def delete_user(request, user_id):
     return redirect('Login')
 
 
+
+
 def user_logout(request):
     logout(request)
     return redirect('Login')
@@ -137,3 +139,6 @@ def register(request):
 
     return render(request, 'register.html')
 
+
+def video(request):
+    return render(request, "video.html")
