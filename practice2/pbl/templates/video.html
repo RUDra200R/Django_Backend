@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services </title>
     <link rel="stylesheet" href="/static/css/servicestyle.css">
-    <link rel="icon" href="/static/images/company-logo.jpg" type="image/x-icon">
-    
+
     <style>
         
 /*                  Navbar                */
@@ -33,6 +32,12 @@
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
   animation: leftani 1s ease forwards;
   animation-delay: calc(.2s * var(--leftani));
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the body stretches to the full height of the viewport */
 }
 
 .nav-items{
@@ -61,6 +66,19 @@
 
 .user-info{
   margin-left: -50%;
+}
+
+.upload-container {
+    flex: 1; /* This will make the upload container take up remaining space */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#video-table {
+    width: 80%;
+    margin: 20px auto; /* Added margin for space between table and footer */
+    border-collapse: collapse;
 }
 
 .user-info-text{
@@ -209,6 +227,249 @@
 
 }
 
+/*                  Content                     */
+
+.title-h{
+    color:#f1f1f1;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.upload-container {
+    width: 50%;
+    margin: 100px auto;
+    text-align: center;
+  }
+  .upload-label {
+    display: inline-block;
+    padding: 20px 40px;
+    background-color: #3498db;
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  .upload-label:hover {
+    background-color: #2980b9;
+  }
+  #video-table {
+    width: 80%;
+    margin: 50px auto;
+    border-collapse: collapse;
+  }
+  #video-table th, #video-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  #video-table th {
+    background-color: #3498db;
+    color: #fff;
+  }
+  #video-table tbody tr:nth-child(even) {
+    background-color: #34495e;
+  }
+  #video-table tbody tr:hover {
+    background-color: #2c3e50;
+  }
+  /* Hide the default file input button */
+  .upload-input {
+    display: none;
+  }
+
+
+  /*          Footer          */
+
+footer {
+    background-color: #333;
+    background-color: rgba(30, 40, 78, 0.5);
+    border-top-right-radius: 180px;
+    border-top-left-radius: 180px;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+footer {
+    background-color: rgba(30, 40, 78, 0.5);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+.footer-columns {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-bottom: 0;
+}
+
+
+.footer-column1 {
+    flex: 1;
+    margin: 1%;
+    margin-left: 14%;
+}
+
+.footer-column1 > h3{
+    font-size: 30px;
+    padding: 0px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    margin: 0px;
+}
+
+.footer-column1 > p{
+    margin: 4%;
+    font-size: 20px;
+    padding: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.footer-column1 > p > a:hover{
+    color:#C7C8CC;
+}
+
+.footer-column1 > p > a{
+    color: #ffff;
+    text-decoration: none;
+    
+}
+
+
+.footer-column2 {
+    flex: 0.6;
+    margin: 1%;
+}
+
+.footer-column2 > ul{
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px
+} 
+
+.footer-column2 > ul > li{
+    margin: 4.6%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.footer-column2 > ul > li > a{
+    color: #ffff;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.footer-column2 > ul > li > a:hover{
+    color: #C7C8CC;
+}
+
+.footer-column3 {
+    flex: 1;
+    margin: 1%;
+    margin-right: 14%;
+}
+
+.footer-column3 > img{
+    height: 80px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+    border-radius: 20px;
+    width: 80px;
+}
+
+.footer-column3 > p{
+    font-size: 25px;
+    margin: 0% 3% 0% 3%;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 2);
+}
+
+.foot-list{
+    color: #ffff;
+    list-style: none;
+}
+
+@media (max-width: 700px) {
+    .footer-column1,
+    .footer-column2,
+    .footer-column3 {
+        flex: 100%;
+        margin: 1% 0;
+    }
+
+    .footer-column1 {
+        margin-left: 0;
+    }
+
+    .footer-column2 > ul > li > a:hover{
+        color:#C7C8CC;
+    }
+}
+
+
+/*                Animation               */
+
+
+@keyframes leftani {
+    0% {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes navani {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes rightSideAni {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes topSideAni {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes SocialAni {
+    0% {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
     </style>
 
 </head>
@@ -245,57 +506,29 @@
         </nav>
     </header>
 
-
-    <!-- Features -->
-    <div class="container">
-        <h1 class="container__heading">Services</h1>
-       <h5>📹CCTV Services can provide you with a complete CCTV security package.📹</h5>
-        <p class="p-tag">With Video Surveillance, we can remotely view, verify, interact,   and control your CCTV cameras. This is critically important in emergency situations when seconds can mean the difference between life and death.</p>
-       
-        
-       
-       <div class="box-container">
-        
-        <div class="box">
-            <img src="/static/images/live-streaming.png" >
-            <h3>Live Video</h3>
-            <p>Experience real-time anomaly detection with our live video monitoring. Click the button below to witness cutting-edge technology in action, ensuring the safety and security of your environment. Stay informed and empowered with instant insights.</p>
-            {% if request.user.is_authenticated %}
-                    <a href="#" class="btn">Live</a>
-            {% else %}
-                    <a href="/Login/" class="navopt1 btn">Please Login to get access to this service</a>
-            {% endif %}
-        </div>
-
-        <div class="box">
-            <img src="/static/images/film.png" >
-            <h3>Video Clips</h3>
-            <p>Unveil real-time anomaly detection on live video. Tap into advanced technology for instant insights and heightened security. Witness the power of innovation with every frame. Stay ahead of potential threats. Click to explore a new era of surveillance.</p>
-            {% if request.user.is_authenticated %}
-                    <a href="/video/" class="btn">Video Clips</a>    
-            {% else %}
-                    <a href="/Login/" class="navopt1 btn">Please Login to get access to this service</a>
-            {% endif %}
-            
-        </div>
-              
-        <div class="box">
-            <img src="/static/images/image-gallery.png">
-            <h3>Pictures</h3>
-            <p>Uncover anomalies in real-time! Witness our live video monitoring in action. Click below to experience cutting-edge technology detecting anomalies as they happen. Stay ahead of potential threats and ensure the safety of your environment. Click now for instant peace of mind.</p>
-            {% if request.user.is_authenticated %}
-                <a href="#" class="btn">Pictures</a>
-            {% else %}
-            <a href="/Login/" class="navopt1 btn" >Please Login to get access to this service</a>
-            {% endif %}
-            
-             </div>
-
+    <!-- Content -->
+<div class="container">
+    <h1 class="title-h">Videos</h1>
+    <div class="upload-container">
+        <label for="video-upload" class="upload-label">Upload Video</label>
+        <input type="file" id="video-upload" class="upload-input" accept="video/*">
     </div>
-    
-
-    </div>
-
+    <table id="video-table">
+        <thead>
+            <tr>
+                <th>Video Name</th>
+                <th>File Size</th>
+            </tr>
+        </thead>
+        <tbody id="video-list">
+            <tr>
+                <td>Sample Video</td>
+                <td>10 MB</td>
+            </tr>
+            
+        </tbody>
+    </table>
+</div>
 
     
      <!-- Footer -->
