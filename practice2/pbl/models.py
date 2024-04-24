@@ -27,5 +27,4 @@ class Contact(AbstractUser):
     message = models.TextField()
 
 class Video(models.Model):
-    title = models.CharField(max_length=100)
-    video_file = models.FileField(upload_to='videos/')
+    video = models.FileField(upload_to='video', default="video")

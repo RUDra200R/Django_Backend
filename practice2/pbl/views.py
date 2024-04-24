@@ -14,6 +14,7 @@ from django.db.utils import IntegrityError
 from django.conf import settings
 from django.contrib.auth import get_user_model
 from django.shortcuts import get_object_or_404
+from django.http import JsonResponse
 
 User = get_user_model()
 # Create your views here.
@@ -41,13 +42,29 @@ def contact(request):
 
 
 
-def upload_video(request):
+# def video(request):
+#     if request.method == 'POST' and request.FILES.get('video_file'):
+#         Video= request.FILES('Video')
+
+#         # Save the file to MongoDB Atlas
+#         file_name = default_storage.save('videos' + video_file.name, ContentFile(video_file.read()))
+#         Video.objects.create(video=video)
+#         messages.success(request, "Video Added successfully!")
+#         return redirect('video')
+#     return render(request, 'video.html')
+def video(request):
     if request.method == 'POST':
-        title = request.POST['title']
-        video_file = request.FILES['video_file']
-        Video.objects.create(title=title, video_file=video_file)
-        return redirect('success_url')  # Redirect to a success page
-    return render(request, 'upload_video.html')
+        video_file = request.FILES.get('video')
+        if video_file:
+            new_video = Video(video_file=video_file)
+            new_video.save()
+            return JsonResponse({'success': True, 'message': 'Video uploaded successfully.'})
+        else:
+            return JsonResponse({'success': False, 'message': 'No video file provided.'})
+    elif request.method == 'GET':
+        return render(request, 'video.html')
+    else:
+        return JsonResponse({'success': False, 'message': 'Invalid request method.'})
 
 
 
@@ -140,5 +157,3 @@ def register(request):
     return render(request, 'register.html')
 
 
-def video(request):
-    return render(request, "video.html")

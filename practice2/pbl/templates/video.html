@@ -510,9 +510,35 @@ footer {
 <div class="container">
     <h1 class="title-h">Videos</h1>
     <div class="upload-container">
-        <label for="video-upload" class="upload-label">Upload Video</label>
-        <input type="file" id="video-upload" class="upload-input" accept="video/*">
+        <label for="video-upload" >Upload Video</label>
+        <input type="file" style="color:white;" name ="video">
+        <input type="submit" value="Submit" style="margin-right: 50px; margin-left: 50px; font-size:15px;" class="upload-label" name="video">
     </div>
+    <div id="message"></div>
+
+    <script>
+        document.getElementById('upload-container').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = this;
+            var formData = new FormData(form);
+
+            fetch('/video/', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('message').innerText = data.message;
+                if (data.success) {
+                    form.reset();
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('message').innerText = 'An error occurred.';
+            });
+        });
+    </script>
     <table id="video-table">
         <thead>
             <tr>
